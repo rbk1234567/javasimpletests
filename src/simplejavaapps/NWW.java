@@ -1,30 +1,30 @@
-package com.company;
+package simplejavaapps;
 
-import java.util.GregorianCalendar;
-import java.util.Scanner;
 
 /*
 calculation of least common multiple
 testing different methods speed
- */
+*/
 
-public class Main {
-
-
-    public static void main(String[] args) {
+public class NWW {
 
 
-        int[][] array = {{2,5},{5,2},{7,3},{3,7},{144,57},{57,144},{1500,5},{5,1500}};
+
+    public static void runTest() {
+        int[][] array = {{2, 5}, {5, 2}, {7, 3}, {3, 7}, {144, 57}, {57, 144}, {1500, 5}, {5, 1500}};
 
         System.out.println("Time of calculation for each method");
-        for (int[] i:array) {
-            System.out.println("----------------- X:"+i[0]+" / Y:"+i[1]+" -----------------");
-            System.out.println("PASS1 M1:"+String.format("%5d",getNWW_M1(i[0],i[1]))+" M2:"+String.format("%5d",getNWW_M2(i[0],i[1]))+" M3:"+String.format("%5d",getNWW_M3(i[0],i[1])));
-            System.out.println("PASS2 M1:"+String.format("%5d",getNWW_M1(i[0],i[1]))+" M2:"+String.format("%5d",getNWW_M2(i[0],i[1]))+" M3:"+String.format("%5d",getNWW_M3(i[0],i[1])));
-            System.out.println("PASS3 M1:"+String.format("%5d",getNWW_M1(i[0],i[1]))+" M2:"+String.format("%5d",getNWW_M2(i[0],i[1]))+" M3:"+String.format("%5d",getNWW_M3(i[0],i[1])));
+        for (
+                int[] i : array) {
+            System.out.println("----------------- X:" + i[0] + " / Y:" + i[1] + " -----------------");
+            System.out.println("PASS1 M1:" + String.format("%5d", getNWW_M1(i[0], i[1])) + " M2:" + String.format("%5d", getNWW_M2(i[0], i[1])) + " M3:" + String.format("%5d", getNWW_M3(i[0], i[1])));
+            System.out.println("PASS2 M1:" + String.format("%5d", getNWW_M1(i[0], i[1])) + " M2:" + String.format("%5d", getNWW_M2(i[0], i[1])) + " M3:" + String.format("%5d", getNWW_M3(i[0], i[1])));
+            System.out.println("PASS3 M1:" + String.format("%5d", getNWW_M1(i[0], i[1])) + " M2:" + String.format("%5d", getNWW_M2(i[0], i[1])) + " M3:" + String.format("%5d", getNWW_M3(i[0], i[1])));
 
         }
     }
+
+
 
     private static long getNWW_M1(int x, int y)
     {
@@ -88,4 +88,6 @@ public class Main {
         }
         return (System.nanoTime()-startTime);
     }
+
+
 }
