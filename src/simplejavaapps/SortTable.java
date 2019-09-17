@@ -4,6 +4,10 @@ import java.util.Arrays;
 
 public class SortTable {
 
+    /*
+    Bubble and quick sort methods
+     */
+
     public static void sortTableBubbleIncreasing(int[] table)
     {
         long startTime = System.nanoTime();

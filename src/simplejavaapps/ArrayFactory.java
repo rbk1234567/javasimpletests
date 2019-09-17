@@ -2,6 +2,10 @@ package simplejavaapps;
 
 public class ArrayFactory {
 
+    /*
+    Multiple table generating methods
+     */
+
     int arraySize = 0;
 
     public ArrayFactory(int arraySize)

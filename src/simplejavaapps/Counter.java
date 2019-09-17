@@ -2,6 +2,10 @@ package simplejavaapps;
 
 public class Counter {
 
+    /*
+    Multiple counting methods
+     */
+
     public static void CountFromZeroTo(int number)
     {
         for(int i=0;i<=number;i++)

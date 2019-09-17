@@ -61,12 +61,9 @@ public class Main {
         }
 
 
+        ScannerInputCreateTable.createTable();
 
     }
 
 
-    private void getSortingTime(Method method)
-    {
-
-    }
 }

@@ -2,6 +2,11 @@ package simplejavaapps;
 
 public class RandomTableFactory {
 
+    /*
+    Generate table of random int values in between min and max both included
+    Works for both negative and positive values
+     */
+
     public static int[] getRandomTable(int size, int min, int max) {
         int[] table = new int[size];
 
@@ -24,13 +29,6 @@ public class RandomTableFactory {
 
 
         return table;
-    }
-
-
-    public static int generatRandomPositiveNegitiveValue(int max, int min) {
-        //Random rand = new Random();
-        int ii = -min + (int) (Math.random() * ((max - (-min)) + 1));
-        return ii;
     }
 
 

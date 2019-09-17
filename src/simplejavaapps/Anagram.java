@@ -2,6 +2,10 @@ package simplejavaapps;
 
 public class Anagram {
 
+    /*
+    Displays anagram of a word
+     */
+
     public static void anagram(String word)
     {
         StringBuilder stringBuilder = new StringBuilder();

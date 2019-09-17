@@ -2,6 +2,10 @@ package simplejavaapps;
 
 public class ReverseOrderCounter {
 
+    /*
+    displays numbers digits in reverse order
+     */
+
     public static void displayInReverseOrder(int number)
     {
         String value = String.valueOf(number);

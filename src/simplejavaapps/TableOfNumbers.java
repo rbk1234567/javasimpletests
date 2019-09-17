@@ -4,6 +4,10 @@ import java.util.Arrays;
 
 public class TableOfNumbers {
 
+    /*
+    gets table of int and displays as [int1, int2, int3 ...]
+     */
+
     public static void displayNumbersFromTable(int[] table)
     {
         StringBuilder stringBuilder = new StringBuilder();
