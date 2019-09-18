@@ -1,4 +1,4 @@
-package Figure;
+package simplejavaapps.Figure;
 
 public class Circle implements FigureInterface {
 
