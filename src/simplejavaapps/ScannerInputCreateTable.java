@@ -10,6 +10,11 @@ public class ScannerInputCreateTable {
      */
 
     public static void createTable() {
+
+        /*
+        version with try/catch (parsing input)
+         */
+
         Scanner scanner = new Scanner(System.in);
         int tableSize = 0;
         int[] table;
@@ -68,5 +73,53 @@ public class ScannerInputCreateTable {
             throw new NumberFormatException();
         }
 
+    }
+
+
+    public static void createTableNextInt() {
+
+        /*
+        Version without try/catch (NumberFormatException)
+         */
+        Scanner scanner = new Scanner(System.in);
+        int tableSize = 0;
+        int[] table;
+
+        System.out.println("Enter size of a table:");
+
+        while(!scanner.hasNextInt())
+        {
+            System.out.println(String.format("\"%s\"", scanner.next()) + " is not an integer. Enter size of a table:");
+        }
+        while (scanner.hasNextInt()) {
+
+            tableSize = Integer.parseInt(scanner.next());
+            if(tableSize>=0)
+            {
+                break;
+            }
+            else
+            {
+                System.out.println("Number must be greater or equal 0. Enter size of a table");
+            }
+
+        }
+        table = new int[tableSize];
+
+        if(tableSize>0)
+        {
+            for (int i = 0; i < tableSize; i++) {
+                System.out.println("Enter value to position [" + i + "].");
+
+                while (!scanner.hasNextInt())
+                {
+                    System.out.println(String.format("\"%s\"", scanner.next()) + " is not an integer. Enter value to position [" + i + "].");
+                }
+                    table[i] = Integer.parseInt(scanner.next());
+            }
+
+        }
+        System.out.println("END with table size: " + tableSize);
+        System.out.println(Arrays.toString(table));
     }
 }

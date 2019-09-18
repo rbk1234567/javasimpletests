@@ -6,7 +6,7 @@ public class Anagram {
     Displays anagram of a word
      */
 
-    public static void anagram(String word)
+    public static void getAnagram(String word)
     {
         StringBuilder stringBuilder = new StringBuilder();
 

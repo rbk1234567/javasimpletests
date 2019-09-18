@@ -60,8 +60,11 @@ public class Main {
             System.out.println("[QUICKSORT/DECREASING] sorted in: "+String.valueOf(System.nanoTime()-startTime)+"ns "+Arrays.toString(result));
         }
 
+        //ScannerInputCreateTable.createTable();
+        //ScannerInputCreateTable.createTableNextInt();
+        //InputCheck.checkInput();
 
-        ScannerInputCreateTable.createTable();
+
 
     }
 
