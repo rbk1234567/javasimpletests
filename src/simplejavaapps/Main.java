@@ -1,6 +1,8 @@
 package simplejavaapps;
 
 
+import simplejavaapps.ChristmasTreeGenerator.ChristmasTreeGenerator;
+
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
@@ -64,7 +66,12 @@ public class Main {
         //ScannerInputCreateTable.createTableNextInt();
         //InputCheck.checkInput();
 
+        ChristmasTreeGenerator t = new ChristmasTreeGenerator();
+        System.out.println(t.toString());
 
+        ChristmasTreeGenerator t2 = new ChristmasTreeGenerator('.',' ',5,1,0);
+
+        System.out.println(t2.toString());
 
     }
 
