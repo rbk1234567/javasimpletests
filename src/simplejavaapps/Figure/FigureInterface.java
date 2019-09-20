@@ -6,5 +6,6 @@ public interface FigureInterface {
 
     double getArea();
 
+    //get variables which created Figure
     double[] getLengths();
 }
