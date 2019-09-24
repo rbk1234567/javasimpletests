@@ -3,35 +3,30 @@ package simplejavaapps.LifeGame;
 public class LifeGame {
     private int[][] grid = new int[4][4]; //initial grid
 
-// default constructor
+    // default constructor
     public LifeGame() {
 
     }
 
     // parametric constructor
     public LifeGame(int[][] grid) {
-        if(grid.length>2 & grid[0].length>2) {
+        if (grid.length > 2 & grid[0].length > 2) {
             this.grid = grid;
-        }
-        else {
-            System.out.println("Cannot initialize grid with too small dimensions ("+grid.length+","+grid[0].length+"). Default grid will be used");
+        } else {
+            System.out.println("Cannot initialize grid with too small dimensions (" + grid.length + "," + grid[0].length + "). Default grid will be used");
         }
     }
 
     // make choosen cell live
-    public void setCellLive(int x,int y)
-    {
+    public void setCellLive(int x, int y) {
         try {
             this.grid[y][x] = 1;
-        }
-        catch (IndexOutOfBoundsException e)
-        {
-            System.out.println("You have tried to make cell["+x+"]["+y+"] live but it doesn't exist.");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("You have tried to make cell[" + x + "][" + y + "] live but it doesn't exist.");
         }
     }
 
-    public int[][] getGrid()
-    {
+    public int[][] getGrid() {
         return this.grid;
     }
 
@@ -49,13 +44,10 @@ public class LifeGame {
                 //game rules for living cells
                 if (grid[x][y] == 1) {
 
-                    if(numberOfLifeNeighbors>=2)
-                    {
+                    if (numberOfLifeNeighbors >= 2) {
                         if (numberOfLifeNeighbors > 3) {
                             result[x][y] = 0;
-                        }
-                        else
-                        {
+                        } else {
                             result[x][y] = 1;
                         }
                     }
@@ -98,42 +90,40 @@ public class LifeGame {
     private int[][] getNeighborsCoordinates(int x, int y) {
         // generate coordinates for given cell neighbors
 
-        /*
-        TL|TM|TR
-        ML|CC|MR
-        BL|BM|BR
-
-        CC-choosen cell
-         */
-
-
         int[][] nCoordinates = new int[8][2];
 
-        nCoordinates[0][0] = (x == 0) ? grid.length - 1 : x - 1; //top left x
-        nCoordinates[0][1] = (y == 0) ? grid[0].length - 1 : y - 1; //top left y
+        int xSize = this.grid.length;
+        int ySize = this.grid[0].length;
+        int pointNumber = 0;
 
-        nCoordinates[1][0] = x; //top middle x
-        nCoordinates[1][1] = (y == 0) ? grid[0].length - 1 : y - 1; //top middle y
+        for (int xDist = -1; xDist <= 1; xDist++) {
+            for (int yDist = -1; yDist <= 1; yDist++) {
+                if (xDist == 0 & yDist == 0) {
+                    //this is actual cell x,y not neighbors coordinate
 
-        nCoordinates[2][0] = (x == grid.length - 1) ? 0 : x + 1; //top right x
-        nCoordinates[2][1] = (y == 0) ? grid[0].length - 1 : y - 1; //top right y
+                }else{
+                    nCoordinates[pointNumber][0]=FoldGridCoordinateX(x+xDist);
+                    nCoordinates[pointNumber][1]=FoldGridCoordinateY(y+yDist);
 
-        nCoordinates[3][0] = (x == 0) ? grid.length - 1 : x - 1; //middle left x
-        nCoordinates[3][1] = y; //middle left y
+                    pointNumber++;
+                }
 
-        nCoordinates[4][0] = (x == 0) ? grid.length - 1 : x - 1; //bottom left x
-        nCoordinates[4][1] = (y == grid[0].length - 1) ? 0 : y + 1; //bottom left y
+            }
 
-        nCoordinates[5][0] = x; //bottom middle x
-        nCoordinates[5][1] = (y == grid[0].length - 1) ? 0 : y + 1; //bottom middle y
-
-        nCoordinates[6][0] = (x == grid.length - 1) ? 0 : x + 1; //bottom right x
-        nCoordinates[6][1] = (y == grid[0].length - 1) ? 0 : y + 1; //bottom right y
-
-        nCoordinates[7][0] = (x == grid.length - 1) ? 0 : x + 1; //middle right x
-        nCoordinates[7][1] = y; //middle right y
+        }
 
         return nCoordinates;
+
+    }
+
+    private int FoldGridCoordinateX(int i) {
+        int xGridSize = this.grid.length;
+        return (i+xGridSize) % xGridSize;
+    }
+
+    private int FoldGridCoordinateY(int i) {
+        int yGridSize = this.grid[0].length;
+        return (i+yGridSize) % yGridSize;
     }
 
     @Override

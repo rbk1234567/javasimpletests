@@ -28,9 +28,16 @@ class LifeGameTest {
         Assertions.assertEquals(expectedString,lifeGame.toString());
 
 
-
-
     }
 
+    @Test
+    void LifeGameTestNormalization()
+    {
+        int length = 5;
+        for(int i=-1;i<length*2;i++)
+        {
+            System.out.println ("i="+i+" | "+(i + length) % length);
+        }
+    }
 
 }
