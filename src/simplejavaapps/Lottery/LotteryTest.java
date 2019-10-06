@@ -11,7 +11,7 @@ class LotteryTest {
         CSVdeserializer csVdeserializer = new CSVdeserializer();
         Lottery lottery = new Lottery(csVdeserializer.deserializeData(csVdeserializer.getFileStringData()));
         lottery.displayChances();
-        LotteryEntry[] winners = lottery.getWinners(10000);
+        LotteryEntry[] winners = lottery.getWinners(0);
 
         int wins = 0;
 

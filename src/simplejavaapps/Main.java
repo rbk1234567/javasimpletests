@@ -95,7 +95,7 @@ public class Main {
         Lottery lottery = new Lottery(csVdeserializer.deserializeData(csVdeserializer.getFileStringData()));
         lottery.displayChances();
         for(int i=0;i<1;i++) {
-            lottery.displayWinners(lottery.getWinners(20));
+            lottery.displayWinners(lottery.getWinners(-2));
             System.out.println("-------------------");
         }
 

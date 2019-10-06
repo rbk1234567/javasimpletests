@@ -27,7 +27,8 @@ one user can win miltiple awards
 
     public LotteryEntry[] getWinners(int numberOfWinners)
     {
-        LotteryEntry[] winners = new LotteryEntry[numberOfWinners];
+
+        LotteryEntry[] winners = new LotteryEntry[numberOfWinners = numberOfWinners<0?0:numberOfWinners];
 
 
         ArrayList<LotteryEntry> list = new ArrayList();
