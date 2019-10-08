@@ -1,6 +1,8 @@
 package simplejavaapps;
 
 
+import simplejavaapps.CommandCalc.CommandCalc;
+import simplejavaapps.CommandCalc.CommandCalcFileLoader;
 import simplejavaapps.LifeGame.LifeGame;
 import simplejavaapps.Lottery.CSVdeserializer;
 import simplejavaapps.Lottery.Lottery;
@@ -77,7 +79,7 @@ public class Main {
 
          */
 
-
+/*
         LifeGame lifeGame = new LifeGame();
         lifeGame.setCellLive(1, 0);
         lifeGame.setCellLive(2, 0);
@@ -88,8 +90,10 @@ public class Main {
             lifeGame.nextGeneration();
             System.out.println(lifeGame.toString());
         }
+*/
 
 
+/*
         CSVdeserializer csVdeserializer = new CSVdeserializer();
 
         Lottery lottery = new Lottery(csVdeserializer.deserializeData(csVdeserializer.getFileStringData()));
@@ -98,7 +102,9 @@ public class Main {
             lottery.displayWinners(lottery.getWinners(-2));
             System.out.println("-------------------");
         }
+*/
 
+        CommandCalc.runCommandsFromFile("/home/rbk/IdeaProjects/simplebytes/src/simplejavaapps/CommandCalc/commands.txt");
 
     }
 
