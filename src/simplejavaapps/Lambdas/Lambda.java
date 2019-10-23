@@ -12,6 +12,12 @@ public class Lambda {
     }
 
 
+
+    @FunctionalInterface
+    public interface Nestable{
+        Voidable nest();
+    }
+
     @FunctionalInterface
     public interface Voidable{
         void show();
@@ -71,6 +77,17 @@ public class Lambda {
                 System.out.println("This is anonymous class without parameter so this message is fully passed as Overriden Voidable interface show() method");
             }
         };
+
+        // nested like lambda expression
+        Nestable n = (Nestable) () -> {
+            Voidable v = () -> { System.out.println("This is nested lambda result"); };
+            v.show();
+            return v;
+        };
+        n.nest();
     }
+
+
+
 
 }
