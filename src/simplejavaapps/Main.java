@@ -3,9 +3,12 @@ package simplejavaapps;
 
 import simplejavaapps.CommandCalc.CommandCalc;
 import simplejavaapps.CommandCalc.CommandCalcFileLoader;
+import simplejavaapps.FindMissing.FindMissing;
+import simplejavaapps.Lambdas.Lambda;
 import simplejavaapps.LifeGame.LifeGame;
 import simplejavaapps.Lottery.CSVdeserializer;
 import simplejavaapps.Lottery.Lottery;
+import simplejavaapps.W3ExcercisesLVL1.W3ExcercisesLVL1;
 
 import java.util.Arrays;
 
@@ -106,6 +109,23 @@ public class Main {
 
         CommandCalc.runCommandsFromFile("/home/rbk/IdeaProjects/simplebytes/src/simplejavaapps/CommandCalc/commands.txt");
 
+
+        double[] tableWithMissingNumber = {4,3,2,1,0,-1,-2,-3,-5};
+        FindMissing fm = new FindMissing();
+        System.out.println("main: "+fm.findMissingNumber(tableWithMissingNumber));
+
+        Lambda l = new Lambda();
+        l.DisplayMessage("LAMBDA!!!");
+        Lambda.doIt(null);
+
+        W3ExcercisesLVL1.Excercise9();
+        W3ExcercisesLVL1.Excercise11(7.5);
+
+        W3ExcercisesLVL1.Excercise15(7.2,"Hello");
+
+        W3ExcercisesLVL1.Excercise17();
+
+        W3ExcercisesLVL1.Excercise18();
     }
 
 

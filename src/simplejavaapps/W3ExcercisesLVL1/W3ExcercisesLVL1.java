@@ -1,8 +1,8 @@
 package simplejavaapps.W3ExcercisesLVL1;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class W3ExcercisesLVL1 {
 
@@ -46,4 +46,134 @@ public class W3ExcercisesLVL1 {
         return Arrays.asList(o1,o2);
     }
 
+    //add two binary numbers and return result as binary number
+    public static void Excercise17()
+    {
+        Scanner scanner = new Scanner(System.in);
+        int b1,b2;
+
+        do {
+            System.out.print("Input first binary: ");
+            b1 = scanner.nextInt();
+        }while(!CheckBinary.isBinary(b1));
+
+        do {
+            System.out.print("Input second binary: ");
+            b2 = scanner.nextInt();
+        }while(!CheckBinary.isBinary(b2));
+
+        System.out.println(String.format("B1: %d + B2:%d",b1,b2));
+
+
+
+
+
+
+        System.out.println(String.format("BINARY SUM: %s",AddBinaries(b1,b2)));
+
+    }
+
+    static String AddBinaries(int b1, int b2)
+    {
+        if(!CheckBinary.isBinary(b1) | !CheckBinary.isBinary(b2))
+        {
+            throw new NumberFormatException("This is not binary number");
+        };
+        int digit = 0;
+        int remainder = 0;
+        StringBuilder b = new StringBuilder();
+        while(b1>0 | b2>0) {
+            digit = (b1 % 10) + (b2 % 10) + remainder;
+            remainder = 0;
+            if (digit >= 2) {
+                remainder = 1;
+                digit = digit==3?1:0;
+            }
+            b.append(digit);
+            //digit = 0;
+            b1 = b1 / 10;
+            b2 = b2 / 10;
+        }
+        if(remainder==1) {
+            b.append(remainder);
+        }
+        if(b.toString().length()==0)
+        {
+            b.append(0);
+        }
+
+        return b.reverse().toString();
+    }
+
+    static class CheckBinary {
+        public static boolean isBinary(int number) {
+            boolean isBinary = true;
+
+            while (true) {
+                if (number == 0) {
+                    break;
+                } else {
+                    int digit = number % 10;
+
+                    if (digit > 1) {
+                        isBinary = false;
+                        break;
+                    }
+                    number = number / 10;
+
+                }
+            }
+            return isBinary;
+        }
+    }
+
+    // multiple two binary numbers
+    public static void Excercise18()
+    {
+        Scanner scanner = new Scanner(System.in);
+        int b1,b2;
+
+        do {
+            System.out.print("Input first binary: ");
+            b1 = scanner.nextInt();
+        }while(!CheckBinary.isBinary(b1));
+
+        do {
+            System.out.print("Input second binary: ");
+            b2 = scanner.nextInt();
+        }while(!CheckBinary.isBinary(b2));
+
+        System.out.println(String.format("B1: %d B2:%d",b1,b2));
+
+
+        StringBuilder b = new StringBuilder();
+
+        int small = (b1>b2)?b2:b1;
+        int big = (b1<b2)?b2:b1;
+
+        String m = String.valueOf(small);
+        int result = 0;
+
+        for (int i = m.length()-1;i>=0;i--)
+        {
+
+            if(String.valueOf(m.charAt(i)).matches("1"))
+            {
+                b.setLength(0);
+                b.append(big);
+                for(int c=(m.length()-1-i);c>0;c--)
+                {
+                    b.append("0");
+                }
+
+                result = Integer.parseInt(AddBinaries(result, Integer.parseInt(b.toString())));
+            }
+
+
+        }
+
+
+
+        System.out.println(String.format("MULTIPLY digit: %s",result));
+    }
 }

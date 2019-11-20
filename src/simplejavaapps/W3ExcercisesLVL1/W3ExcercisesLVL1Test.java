@@ -47,6 +47,23 @@ class W3ExcercisesLVL1Test {
         Assertions.assertEquals(7.5,result.get(1));
         Assertions.assertEquals("Hello",result.get(0));
 
+    }
+
+
+    @Test
+    void addBinaries() {
+
+        int b1 = 101;
+        int b2 = 10111;
+        int b3 = 000000;
+        int b4 = 111111;
+
+        Assertions.assertEquals("11100",W3ExcercisesLVL1.AddBinaries(b1,b2));
+        Assertions.assertEquals("1010",W3ExcercisesLVL1.AddBinaries(b1,b1));
+        Assertions.assertEquals("101110",W3ExcercisesLVL1.AddBinaries(b2,b2));
+        Assertions.assertEquals("0",W3ExcercisesLVL1.AddBinaries(b3,b3));
+        Assertions.assertEquals("1111110",W3ExcercisesLVL1.AddBinaries(b4,b4));
+        Assertions.assertEquals("111111",W3ExcercisesLVL1.AddBinaries(b4,b3));
 
     }
 }
