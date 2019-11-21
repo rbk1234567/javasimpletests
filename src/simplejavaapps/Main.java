@@ -123,9 +123,11 @@ public class Main {
 
         W3ExcercisesLVL1.Excercise15(7.2,"Hello");
 
-        W3ExcercisesLVL1.Excercise17();
+        //W3ExcercisesLVL1.Excercise17();
 
-        W3ExcercisesLVL1.Excercise18();
+        //W3ExcercisesLVL1.Excercise18();
+
+        W3ExcercisesLVL1.Excercise19();
     }
 
 
