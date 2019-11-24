@@ -127,7 +127,15 @@ public class Main {
 
         //W3ExcercisesLVL1.Excercise18();
 
-        W3ExcercisesLVL1.Excercise19();
+        //W3ExcercisesLVL1.Excercise19();
+
+        //W3ExcercisesLVL1.Excercise20();
+
+        //W3ExcercisesLVL1.Excercise21();
+
+        //W3ExcercisesLVL1.Excercise22();
+
+        W3ExcercisesLVL1.Excercise23();
     }
 
 
