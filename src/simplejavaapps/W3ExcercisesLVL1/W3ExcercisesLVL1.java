@@ -415,4 +415,114 @@ public class W3ExcercisesLVL1 {
         System.out.println("Hexadecimal representation is: " + result.reverse().toString());
     }
 
+
+    //binary to octal
+    public static void Excercise24() {
+        int digit = 0;
+        String binary;
+        String[] splittedBinary = new String[0];
+        int decimal = 0;
+        int powOfTwo = 0;
+
+        StringBuilder result = new StringBuilder();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter binary number:");
+
+        //take input and check if it is a binary
+        while (scanner.hasNext() == true) {
+
+                boolean isBinary = true;
+                binary = scanner.next();
+
+                splittedBinary = binary.split("");
+                for (String s : splittedBinary) {
+                    if (s.matches("0") | s.matches("1")) {
+
+                    } else {
+                        isBinary = false;
+                        break;
+                    }
+                }
+                if (isBinary == true) {
+                    break;
+                }
+
+                System.out.println("Enter binary number:");
+
+
+        }
+
+
+        //calculate octal value
+        for (int i=splittedBinary.length-1;i>=0;i--) {
+
+            if(splittedBinary[i].matches("1")) {
+                decimal = decimal + (int) Math.pow(2, powOfTwo);
+
+            }
+
+            powOfTwo++;
+
+            if(powOfTwo==3 | i==0)
+            {
+                result.append(decimal);
+                powOfTwo = 0;
+                decimal = 0;
+            }
+        }
+
+        System.out.println("Octal representation is: " + result.reverse().toString());
+    }
+
+
+    //octal to decimal
+    public static void Excercise25() {
+        int digit = 0;
+        String octal;
+        String[] splittedOctal = new String[0];
+        int decimal = 0;
+        int powOfEight = 0;
+        int input = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter octal number:");
+
+        //take input and check if it is an octal
+        while (scanner.hasNext() == true) {
+            if(scanner.hasNextInt()) {
+                boolean isOctal = true;
+                input = scanner.nextInt();
+                octal = String.valueOf(input);
+
+                splittedOctal = octal.split("");
+                for (String s : splittedOctal) {
+                    if (Integer.parseInt(s) >= 0 && Integer.parseInt(s) < 8) {
+
+                    } else {
+                        isOctal = false;
+
+                        System.out.println("Enter octal number:");
+                        break;
+                    }
+                }
+                if (isOctal == true) {
+
+                    break;
+                }
+            }else {
+                scanner.next();
+                System.out.println("Enter octal number:");
+            }
+        }
+
+        //calculate octal value
+        for (int i=splittedOctal.length-1;i>=0;i--) {
+            {
+                decimal = decimal + Integer.parseInt(splittedOctal[i])*(int) Math.pow(8, powOfEight);
+
+            }
+            powOfEight++;
+        }
+
+        System.out.println("Decimal representation is: " + decimal);
+    }
 }
