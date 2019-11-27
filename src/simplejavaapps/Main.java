@@ -139,7 +139,9 @@ public class Main {
 
         //W3ExcercisesLVL1.Excercise24();
 
-        W3ExcercisesLVL1.Excercise25();
+        //W3ExcercisesLVL1.Excercise25();
+
+        W3ExcercisesLVL1.Excercise26();
     }
 
 
