@@ -580,4 +580,93 @@ public class W3ExcercisesLVL1 {
 
         System.out.println("Binary representation is: " + binary.reverse().toString());
     }
+
+    //octal to hexadecimal
+    public static void Excercise27() {
+
+        int digit = 0;
+        int decimal = 0;
+        boolean isOctal = false;
+        String octal;
+        String[] splittedOctal = new String[0];
+        int input = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter octal number:");
+
+        //take input and check if it is an octal
+        while (scanner.hasNext() == true && isOctal==false) {
+            if(scanner.hasNextInt()) {
+                isOctal = true;
+                input = scanner.nextInt();
+                octal = String.valueOf(input);
+
+                splittedOctal = octal.split("");
+                for (String s : splittedOctal) {
+                    if (Integer.parseInt(s) >= 0 && Integer.parseInt(s) < 8) {
+
+                    } else {
+                        isOctal = false;
+                        break;
+                    }
+                }
+                if (isOctal == true) {
+                    break;
+                }
+            }else {
+                scanner.next();
+                isOctal = false;
+            }
+            System.out.println("Enter octal number:");
+        }
+
+        //calculate hexadecimal value
+        StringBuilder hex = new StringBuilder();
+        int powerOfEight = 0;
+
+        //step1. calculate decimal value
+        for(int i=splittedOctal.length-1;i>=0;i--)
+        {
+            decimal = decimal + (int) (Integer.parseInt(splittedOctal[i])*Math.pow(8,powerOfEight));
+            powerOfEight++;
+        }
+        //step2. calculate hex value
+        if (decimal == 0) {
+            hex.append(0);
+        } else {
+            while (decimal > 0) {
+                digit = decimal % 16;
+                if (digit < 10) {
+                    hex.append(digit);
+                } else {
+                    switch (digit) {
+                        case 10:
+                            hex.append("A");
+                            break;
+                        case 11:
+                            hex.append("B");
+                            break;
+                        case 12:
+                            hex.append("C");
+                            break;
+                        case 13:
+                            hex.append("D");
+                            break;
+                        case 14:
+                            hex.append("E");
+                            break;
+                        case 15:
+                            hex.append("F");
+                            break;
+
+                    }
+                }
+                decimal = (decimal - digit) / 16;
+
+            }
+        }
+        System.out.println("Hexadecimal representation is: " + hex.reverse().toString());
+
+
+
+    }
 }
