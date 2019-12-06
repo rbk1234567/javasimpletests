@@ -669,4 +669,84 @@ public class W3ExcercisesLVL1 {
 
 
     }
+
+    //hexadecimal to decimal
+    public static void Excercise28() {
+
+        String input = "";
+        Scanner scanner = new Scanner(System.in);
+        String[] splittedInput = new String[0];
+        boolean isHex = false;
+        int decimal = 0;
+        int digit = 0;
+        int powOfSixteen = 0;
+
+
+        System.out.println("Enter hexadecimal number:");
+
+        //check if input is a hexadecimal number
+        while(scanner.hasNextLine() && isHex==false)
+        {
+            if(scanner.hasNext()) {
+                isHex = true;
+                input = scanner.next();
+
+
+                splittedInput = input.toUpperCase().split("");
+                String[] hexChars = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
+
+                for (String sign : splittedInput) {
+                    for (int i = 0; i < hexChars.length; i++) {
+                        if (sign.matches(hexChars[i])) {
+                            isHex = true;
+                            break;
+                        }
+                        isHex = false;
+                    }
+                    if (isHex != true) {
+                        System.out.println("Enter hexadecimal number:");
+                        break;
+                    }
+                }
+            }else {
+                scanner.next();
+                isHex = false;
+            }
+
+        }
+
+            for (int i = splittedInput.length-1;i>=0;i--) {
+                switch (splittedInput[i]) {
+                    case "A":
+                        digit = 10;
+                        break;
+                    case "B":
+                        digit = 11;
+                        break;
+                    case "C":
+                        digit = 12;
+                        break;
+                    case "D":
+                        digit = 13;
+                        break;
+                    case "E":
+                        digit = 14;
+                        break;
+                    case "F":
+                        digit = 15;
+                        break;
+                    default:
+                        digit = Integer.parseInt(splittedInput[i]);
+                        break;
+
+                }
+                digit = digit * (int)Math.pow(16,powOfSixteen);
+                powOfSixteen++;
+                decimal = decimal + digit;
+            }
+
+
+
+        System.out.println("Decimal representation is: "+decimal);
+    }
 }
