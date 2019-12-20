@@ -8,7 +8,7 @@ import simplejavaapps.Lambdas.Lambda;
 import simplejavaapps.LifeGame.LifeGame;
 import simplejavaapps.Lottery.CSVdeserializer;
 import simplejavaapps.Lottery.Lottery;
-import simplejavaapps.W3ExcercisesLVL1.W3ExcercisesLVL1;
+import simplejavaapps.W3ExercisesLVL1.W3ExercisesLVL1;
 
 import java.util.Arrays;
 
@@ -118,36 +118,50 @@ public class Main {
         l.DisplayMessage("LAMBDA!!!");
         Lambda.doIt(null);
 
-        W3ExcercisesLVL1.Excercise9();
-        W3ExcercisesLVL1.Excercise11(7.5);
+        W3ExercisesLVL1.Exercise9();
+        W3ExercisesLVL1.Exercise11(7.5);
 
-        W3ExcercisesLVL1.Excercise15(7.2,"Hello");
+        W3ExercisesLVL1.Exercise15(7.2,"Hello");
 
-        //W3ExcercisesLVL1.Excercise17();
+        //W3ExercisesLVL1.Exercise17();
 
-        //W3ExcercisesLVL1.Excercise18();
+        //W3ExercisesLVL1.Exercise18();
 
-        //W3ExcercisesLVL1.Excercise19();
+        //W3ExercisesLVL1.Exercise19();
 
-        //W3ExcercisesLVL1.Excercise20();
+        //W3ExercisesLVL1.Exercise20();
 
-        //W3ExcercisesLVL1.Excercise21();
+        //W3ExercisesLVL1.Exercise21();
 
-        //W3ExcercisesLVL1.Excercise22();
+        //W3ExercisesLVL1.Exercise22();
 
-        //W3ExcercisesLVL1.Excercise23();
+        //W3ExercisesLVL1.Exercise23();
 
-        //W3ExcercisesLVL1.Excercise24();
+        //W3ExercisesLVL1.Exercise24();
 
-        //W3ExcercisesLVL1.Excercise25();
+        //W3ExercisesLVL1.Exercise25();
 
-        //W3ExcercisesLVL1.Excercise26();
+        //W3ExercisesLVL1.Exercise26();
 
-        //W3ExcercisesLVL1.Excercise27();
+        //W3ExercisesLVL1.Exercise27();
 
-        //W3ExcercisesLVL1.Excercise28();
+        //W3ExercisesLVL1.Exercise28();
 
-        W3ExcercisesLVL1.Excercise29();
+        //W3ExercisesLVL1.Exercise29();
+
+        //W3ExercisesLVL1.Exercise30();
+
+        //W3ExercisesLVL1.Exercise31();
+
+        //W3ExercisesLVL1.Exercise32();
+
+        //W3ExercisesLVL1.Exercise33();
+
+        //W3ExercisesLVL1.Exercise34();
+
+        //W3ExercisesLVL1.Exercise35();
+
+        W3ExercisesLVL1.Exercise36();
     }
 
 

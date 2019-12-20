@@ -1,20 +1,20 @@
-package simplejavaapps.W3ExcercisesLVL1;
+package simplejavaapps.W3ExercisesLVL1;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class W3ExcercisesLVL1 {
+public class W3ExercisesLVL1 {
 
     // just make simple calculation
-    public static double Excercise9() {
+    public static double Exercise9() {
         double x = ((25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5));
         System.out.println(x);
         return x;
     }
 
     // return area and perimeter of circle with given radius
-    public static List<Object> Excercise11(double radius) {
+    public static List<Object> Exercise11(double radius) {
         double area = Math.PI * Math.pow(radius, 2);
         double perimeter = 2 * Math.PI * radius;
 
@@ -23,18 +23,18 @@ public class W3ExcercisesLVL1 {
     }
 
     // takes 3 numbers and return average value
-    public static double Excercise12(double x, double y, double z) {
+    public static double Exercise12(double x, double y, double z) {
         return (x + y + z) / 3;
     }
 
-    public static List<Object> Excercise13(double x, double y) {
+    public static List<Object> Exercise13(double x, double y) {
         Double area = x * y;
         Double perimeter = (x + y) * 2;
         return Arrays.asList(area, perimeter);
     }
 
     //swap variables
-    public static List<Object> Excercise15(Object o1, Object o2) {
+    public static List<Object> Exercise15(Object o1, Object o2) {
         Object temp = o1;
         o1 = o2;
         o2 = temp;
@@ -42,7 +42,7 @@ public class W3ExcercisesLVL1 {
     }
 
     //add two binary numbers and return result as binary number
-    public static void Excercise17() {
+    public static void Exercise17() {
         Scanner scanner = new Scanner(System.in);
         int b1, b2;
 
@@ -94,7 +94,7 @@ public class W3ExcercisesLVL1 {
     }
 
     // multiple two binary numbers
-    public static void Excercise18() {
+    public static void Exercise18() {
         Scanner scanner = new Scanner(System.in);
         int b1, b2;
 
@@ -139,7 +139,7 @@ public class W3ExcercisesLVL1 {
     }
 
     //convert decimal to binary
-    public static void Excercise19() {
+    public static void Exercise19() {
         int digit = 0;
         int decimal = 0;
 
@@ -194,7 +194,7 @@ public class W3ExcercisesLVL1 {
     }
 
     //decimal to hex
-    public static void Excercise20() {
+    public static void Exercise20() {
         int digit = 0;
         int decimal = 0;
 
@@ -252,7 +252,7 @@ public class W3ExcercisesLVL1 {
 
 
     //decimal to octal
-    public static void Excercise21() {
+    public static void Exercise21() {
         int digit = 0;
         int decimal = 0;
 
@@ -284,7 +284,7 @@ public class W3ExcercisesLVL1 {
     }
 
     //binary to decimal
-    public static void Excercise22() {
+    public static void Exercise22() {
         int digit = 0;
         String binary;
         String[] splittedBinary = new String[0];
@@ -332,7 +332,7 @@ public class W3ExcercisesLVL1 {
 
 
     //binary to hexadecimal
-    public static void Excercise23() {
+    public static void Exercise23() {
         int digit = 0;
         String binary;
         String[] splittedBinary = new String[0];
@@ -417,7 +417,7 @@ public class W3ExcercisesLVL1 {
 
 
     //binary to octal
-    public static void Excercise24() {
+    public static void Exercise24() {
         int digit = 0;
         String binary;
         String[] splittedBinary = new String[0];
@@ -476,7 +476,7 @@ public class W3ExcercisesLVL1 {
 
 
     //octal to decimal
-    public static void Excercise25() {
+    public static void Exercise25() {
         int digit = 0;
         boolean isOctal = false;
         String octal;
@@ -527,7 +527,7 @@ public class W3ExcercisesLVL1 {
 
 
     //octal to binary
-    public static void Excercise26() {
+    public static void Exercise26() {
         int digit = 0;
         boolean isOctal = false;
         String octal;
@@ -582,7 +582,7 @@ public class W3ExcercisesLVL1 {
     }
 
     //octal to hexadecimal
-    public static void Excercise27() {
+    public static void Exercise27() {
 
         int digit = 0;
         int decimal = 0;
@@ -671,7 +671,7 @@ public class W3ExcercisesLVL1 {
     }
 
     //hexadecimal to decimal
-    public static void Excercise28() {
+    public static void Exercise28() {
 
         String input = "";
         Scanner scanner = new Scanner(System.in);
@@ -751,7 +751,7 @@ public class W3ExcercisesLVL1 {
     }
 
     //hexadecimal to binary
-    public static void Excercise29() {
+    public static void Exercise29() {
         String input = "";
         Scanner scanner = new Scanner(System.in);
         String[] splittedInput = new String[0];
@@ -798,8 +798,327 @@ public class W3ExcercisesLVL1 {
 
         System.out.println("Binary representation is: "+result.toString());
 
+    }
 
+    //hexadecimal to octal
+    public static void Exercise30() {
+        String input = "";
+        Scanner scanner = new Scanner(System.in);
+        String[] splittedInput = new String[0];
+        boolean isHex = false;
+        StringBuilder result = new StringBuilder();
+        String[] binaryTable = new String[] {"0000","0001","0010","0011","0100","0101","0110","0111","1000","1001","1010","1011","1100","1101","1110","1111"};
+        String[] octalTable = new String[]{"000","001","010","011","100","101","110","111"};
+
+
+        System.out.println("Enter hexadecimal number:");
+
+        //check if input is a hexadecimal number and assign result
+        while(scanner.hasNextLine() && isHex==false)
+        {
+            if(scanner.hasNext()) {
+                isHex = true;
+                input = scanner.next();
+
+
+                splittedInput = input.toUpperCase().split("");
+
+                String[] hexChars = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
+
+                for (String sign : splittedInput) {
+                    for (int i = 0; i < hexChars.length; i++) {
+                        if (sign.matches(hexChars[i])) {
+                            isHex = true;
+                            result.append(binaryTable[i]);
+                            break;
+                        }
+                        isHex = false;
+                    }
+                    if (isHex != true) {
+                        result.setLength(0);
+                        System.out.println("Enter hexadecimal number:");
+                        break;
+                    }
+                }
+            }else {
+                scanner.next();
+                isHex = false;
+            }
+
+        }
+
+        String binary = result.toString();
+        StringBuilder partialResult = new StringBuilder();
+        result.setLength(0);
+
+        for(int i=(3-(binary.length())%3);i>0;i--)
+        {
+            result.append("0");
+        }
+        splittedInput = result.append(binary).toString().split("");
+        result.setLength(0);
+
+        for(int i = splittedInput.length-1;i>=0; )
+        {
+            for(int x=3;x>0;x--)
+            {
+                partialResult.append(splittedInput[i]);
+                i--;
+            }
+            String partialInverted = partialResult.reverse().toString();
+            for(int y=0;y<octalTable.length-1;y++)
+            {
+                if(octalTable[y].matches(partialInverted))
+                {
+                    result.append(y);
+                    partialResult.setLength(0);
+                    break;
+                }
+            }
+        }
+
+
+        System.out.println("Octal representation is: "+result.reverse().toString());
+
+    }
+
+    // Show java version
+    public static void Exercise31()
+    {
+        System.out.println("Current JAVA version is: "+System.getProperty("java.version"));
+        System.out.println("Current JAVA vendor is: "+System.getProperty("java.vm.vendor"));
+
+        /*
+        get system properties with System.getProperties().list(System.out);
+         */
+    }
+
+    // take two numbers and show comparison
+    public static void Exercise32()
+    {
+        Scanner scanner = new Scanner(System.in);
+        int firstNumber = 0;
+        int secondNumber = 0;
+        int iterator = 1;
+
+        System.out.println("--- Exercise 32 ---");
+
+        do {
+            System.out.println(String.format("Enter %d number:",iterator));
+            while (scanner.hasNext()) {
+                if (scanner.hasNextInt() == true) {
+                    int number = scanner.nextInt();
+
+                    iterator++;
+                    firstNumber = iterator==2?number:firstNumber;
+                    secondNumber = iterator==3?number:secondNumber;
+                    break;
+
+                } else {
+                    scanner.next();
+                    System.out.println(String.format("Enter %d number:",iterator));
+                }
+            }
+        }while (iterator<3);
+
+        System.out.println(String.format("First number is %d and second number is %d",firstNumber,secondNumber));
+
+
+        if(firstNumber==secondNumber)
+        {
+            System.out.println(String.format("%d == %d",firstNumber,secondNumber));
+        }else{
+            System.out.println(String.format("%d != %d",firstNumber,secondNumber));
+            if(firstNumber<secondNumber)
+            {
+                System.out.println(String.format("%d < %d",firstNumber,secondNumber));
+            }else
+            {
+                System.out.println(String.format("%d > %d",firstNumber,secondNumber));
+            }
+        }
+
+    }
+
+    // take number and sum digits
+    public static void Exercise33()
+    {
+        Scanner scanner = new Scanner(System.in);
+        int number = 0;
+        int result = 0;
+
+        System.out.println("--- Exercise 33 ---");
+
+
+            System.out.println("Enter number:");
+            while (scanner.hasNext()) {
+                if (scanner.hasNextInt() == true) {
+                    number = scanner.nextInt();
+                    break;
+
+                } else {
+                    scanner.next();
+                    System.out.println("Enter number:");
+                }
+            }
+
+            number = number<0?Math.abs(number):number;
+            String[] splitted = String.valueOf(number).split("");
+
+        for (String s:splitted
+             ) {
+            result = result+Integer.parseInt(s);
+        }
+
+        System.out.println(String.format("Sum of %d digits of number %d is %d",splitted.length,number,result));
+    }
+
+    // calculate area of hexagon
+    public static void Exercise34()
+    {
+        Scanner scanner = new Scanner(System.in);
+        int side = 0;
+        double area = 0;
+
+        System.out.println("--- Exercise 34 ---");
+
+
+        System.out.println("Enter side lenght:");
+        while (scanner.hasNext()) {
+            if (scanner.hasNextInt() == true) {
+                side = scanner.nextInt();
+                break;
+
+            } else {
+                scanner.next();
+                System.out.println("Enter side lenght:");
+            }
+        }
+
+        area = (6*Math.pow(side,2)/(4*Math.tan(Math.PI/6)));
+        System.out.println(String.format("Area of hexagon with side lenght %d is: %f",side,area));
 
 
     }
+
+    // calculate area of n-gon
+    public static void Exercise35()
+    {
+        Scanner scanner = new Scanner(System.in);
+        int side = 0;
+        int n = 0;
+        double area = 0;
+        int iterator = 1;
+        String[] varNames = new String[]{"side lenght: ","number of sides: "};
+
+        System.out.println("--- Exercise 35 ---");
+
+        do {
+            System.out.println("Enter "+varNames[iterator-1]);
+            while (scanner.hasNext()) {
+                if (scanner.hasNextInt() == true) {
+                    int number = Math.abs(scanner.nextInt());
+
+                    iterator++;
+                    side = iterator==2?number:side;
+                    n = iterator==3?number:n;
+                    break;
+
+                } else {
+                    scanner.next();
+                    System.out.println("Enter "+varNames[iterator-1]);
+                }
+            }
+        }while (iterator<3);
+
+        area = (n*Math.pow(side,2)/(4*Math.tan(Math.PI/n)));
+        System.out.println(String.format("Area of %d-gon with side lenght %d is: %f",n,side,area));
+
+
+    }
+
+    //calculate distance between two coordinates (input in degrees)
+    public static void Exercise36()
+    {
+        Scanner scanner = new Scanner(System.in);
+        final double PLANET_RADIUS = 6371.01;
+        double xLat = 0;
+        double xLon = 0;
+        double yLat = 0;
+        double yLon = 0;
+        double distance = 0;
+        int iterator = 0;
+        double minCoordValue = -90;
+        double maxCoordValue = 90;
+        String[] varNames = new String[]{"first point latitude: ","first point longtitude: ","second point latitude: ","second point longtitude: "};
+
+        System.out.println("--- Exercise 36 ---");
+
+        do {
+            System.out.println(String.format("Enter "+varNames[iterator]+" (coordinates range[%.0f/%.0f])",minCoordValue,maxCoordValue));
+            while (scanner.hasNext()) {
+                if (scanner.hasNextDouble() == true) {
+                    double number = scanner.nextDouble();
+
+                    boolean isIteratorEven = iterator%2!=0?false:true;
+                    minCoordValue=isIteratorEven?-90:-180;
+                    maxCoordValue=isIteratorEven?90:180;
+
+                    boolean isValid = number >= minCoordValue && number <= maxCoordValue;
+
+                    if(isValid) {
+                        switch (iterator) {
+                            case 0: {
+                                xLat = Math.toRadians(number);
+                                iterator++;
+                                minCoordValue-=90;
+                                maxCoordValue+=90;
+                                break;
+                            }
+                            case 1: {
+                                xLon = Math.toRadians(number);
+                                iterator++;
+                                minCoordValue+=90;
+                                maxCoordValue-=90;
+                                break;
+                            }
+                            case 2: {
+                                yLat = Math.toRadians(number);
+                                iterator++;
+                                minCoordValue-=90;
+                                maxCoordValue+=90;
+                                break;
+                            }
+                            case 3: {
+                                yLon = Math.toRadians(number);
+                                iterator++;
+                                minCoordValue+=90;
+                                maxCoordValue-=90;
+                                break;
+                            }
+                            default: {
+                            }
+                        }
+                        break;
+                    }
+                    else {
+                        System.out.println(String.format("Incorrect value. Enter "+varNames[iterator]+" (coordinates range[%.0f/%.0f])",minCoordValue,maxCoordValue));
+                    }
+                }
+                else {
+                    scanner.next();
+                    System.out.println(String.format("Enter "+varNames[iterator]+" (coordinates range[%.0f/%.0f])",minCoordValue,maxCoordValue));
+
+                }
+            }
+        }while (iterator<4);
+
+        //d = radius * arccos(sin(P1x) * sin(P2x) + cos(P1x) * cos(P2x) * cos(P1y - P2y))
+        distance = PLANET_RADIUS*Math.acos(Math.sin(xLat)*Math.sin(yLat)+Math.cos(xLat)*Math.cos(yLat)*Math.cos(xLon-yLon));
+
+        System.out.println(String.format("Distance between [%.2f/%.2f] and [%.2f/%.2f] is %.2f km",Math.toDegrees(xLat),Math.toDegrees(xLon),Math.toDegrees(yLat),Math.toDegrees(yLon),distance));
+    }
+
+
+
 }
